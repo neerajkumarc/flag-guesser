@@ -8,6 +8,7 @@ function updatescore() {
 }
 
 function getFlags() {
+  let optionsArr = [];
   fetch("https://restcountries.com/v3.1/all")
     .then((res) => res.json())
     .then((data) => {
@@ -16,33 +17,38 @@ function getFlags() {
       }
       random = Math.floor(Math.random() * fwc.length + 1);
       document.getElementById("flag").src = fwc[random].flag;
+      for (let i = 1; i <= 4; i++) {
+        let randomOpt = Math.floor(Math.random() * fwc.length + 1);
+        optionsArr.push(fwc[randomOpt].country);
+      }
+      optionsArr[Math.floor(Math.random() * optionsArr.length)] =
+        fwc[random].country;
+
+      optionsArr.forEach((options) => {
+        const optionEl = document.createElement("button");
+        optionEl.classList.add("optionsEl");
+        optionEl.innerText = options;
+        document.getElementById("options").appendChild(optionEl);
+        optionEl.addEventListener("click", () => {
+          handleClick(options, optionEl);
+        });
+      });
     });
 }
-getFlags();
 
-function getUserInput() {
-  let answer = fwc[random].country.toLowerCase();
-  let userInput = document.getElementById("userInput").value.toLowerCase();
-  isCorrect = userInput == answer;
-  if (isCorrect) {
-    score += 10;
-    getFlags();
-    document.getElementById("userInput").value = "";
+getFlags();
+function handleClick(options, optionEl) {
+  if (options == fwc[random].country) {
+    optionEl.style.border = "4px solid green";
+    score += 20;
+    updatescore();
+    setTimeout(() => {
+      document.getElementById("options").innerHTML = null;
+      getFlags();
+    }, 1000);
+  } else {
+    optionEl.style.border = "4px solid red";
+    score -= 20;
     updatescore();
   }
-  console.log(answer);
 }
-function skip() {
-  score -= 10;
-  getFlags();
-  updatescore();
-}
-
-document
-  .getElementById("userInput")
-  .addEventListener("keypress", function (event) {
-    if (event.key === "Enter") {
-      event.preventDefault();
-      document.getElementById("submitbtn").click();
-    }
-  });
