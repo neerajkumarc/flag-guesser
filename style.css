@@ -9,24 +9,22 @@ body {
   text-align: center;
   font-family: PublicPixel;
 }
-/* *{
-    outline: 2px solid red;
-} */
 #flag {
   width: 350px;
-  height: 250px;
   box-shadow: 1px 1px 400px #6a6a6a;
 }
+
 .section1 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 1rem;
 }
 .main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1rem;
+  gap: .2rem;
   align-items: center;
 }
 
