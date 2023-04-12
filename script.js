@@ -1,10 +1,13 @@
 var fwc = [{}];
 let random;
 let score = 0;
+let highscore = localStorage.getItem("highscore") || 0;
+document.getElementById("highscore").textContent = highscore;
+
 function updatescore() {
   score < 0
     ? (score = 0)
-    : (document.getElementById("score").innerHTML = score);
+    : (document.getElementById("score").innerText = score);
 }
 
 function getFlags() {
@@ -40,6 +43,7 @@ getFlags();
 function handleClick(options, optionEl) {
   if (options == fwc[random].country) {
     optionEl.style.border = "4px solid green";
+
     score += 20;
     updatescore();
     setTimeout(() => {
@@ -50,5 +54,11 @@ function handleClick(options, optionEl) {
     optionEl.style.border = "4px solid red";
     score -= 20;
     updatescore();
+  }
+
+  if (highscore < score) {
+    highscore = score;
+    localStorage.setItem("highscore", highscore);
+    document.getElementById("highscore").textContent = highscore;
   }
 }

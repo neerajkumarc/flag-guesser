@@ -49,3 +49,9 @@ body {
   box-shadow: 1px 1px 400px #6a6a6a;
   cursor: pointer;
 }
+.scoresdiv{
+  display: flex;
+  gap:2rem;
+  font-size: .81rem;
+  justify-content: center;
+}
