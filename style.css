@@ -55,3 +55,18 @@ body {
   font-size: .81rem;
   justify-content: center;
 }
+
+.animate-error{
+  animation: error .1s ease-in-out ;  
+}
+
+@keyframes error{
+
+ 0%{
+  transform: rotate(4deg);
+ }
+ 100%{
+  transform: rotate(-4deg);
+ }
+
+}

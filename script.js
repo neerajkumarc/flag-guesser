@@ -52,6 +52,7 @@ function handleClick(options, optionEl) {
     }, 1000);
   } else {
     optionEl.style.border = "4px solid red";
+    optionEl.classList.add("animate-error")
     score -= 20;
     updatescore();
   }
