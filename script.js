@@ -2,6 +2,9 @@ var fwc = [{}];
 let random;
 let score = 0;
 let highscore = localStorage.getItem("highscore") || 0;
+const correctAudio = new Audio("./sounds/correct.mp3");
+const incorrectAudio = new Audio("./sounds/incorrect.mp3");
+
 document.getElementById("highscore").textContent = highscore;
 
 function updatescore() {
@@ -42,8 +45,12 @@ function getFlags() {
 getFlags();
 function handleClick(options, optionEl) {
   if (options == fwc[random].country) {
+    if (correctAudio.paused) {
+      correctAudio.play();
+    } else {
+      correctAudio.currentTime = 0;
+    }
     optionEl.style.border = "4px solid green";
-
     score += 20;
     updatescore();
     setTimeout(() => {
@@ -51,8 +58,13 @@ function handleClick(options, optionEl) {
       getFlags();
     }, 1000);
   } else {
+    if (incorrectAudio.paused) {
+      incorrectAudio.play();
+    } else {
+      incorrectAudio.currentTime = 0;
+    }
     optionEl.style.border = "4px solid red";
-    optionEl.classList.add("animate-error")
+    optionEl.classList.add("animate-error");
     score -= 20;
     updatescore();
   }
