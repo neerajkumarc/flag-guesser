@@ -5,24 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2958/2958792.png"/>
+    <link
+      rel="icon"
+      href="https://cdn-icons-png.flaticon.com/512/2958/2958792.png"
+    />
     <script src="script.js" defer></script>
     <title>Flag Guesser</title>
   </head>
   <body>
- <div class="section1">
-    <div class="main">
+    <div class="section" id="homeDiv">
+      <h1>Guess the flag Game</h1>
+      <div>
+        <label for="sound">Sound</label>
+      <input type="checkbox" name="sound" id="sound">
+      </div>
+      <button class="playBtn" id="playBtn">Play</button>
+    </div>
+    <div class="section1" id="gameDiv"style="display: none">
+      <div class="main">
         <h1>Flag Guesser</h1>
         <div class="container">
           <div class="scoresdiv">
             <p>High-Score: <span id="highscore">0</span></p>
-          <p>Score: <span id="score">0</span></p>
+            <p>Score: <span id="score">0</span></p>
           </div>
-          <img src="" alt="flag" id="flag"/>
-          <div id="options">
-          </div>
+          <img src="" alt="flag" id="flag" />
+          <div id="options"></div>
         </div>
+      </div>
     </div>
- </div>
   </body>
 </html>

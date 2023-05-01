@@ -1,3 +1,9 @@
+document.getElementById("playBtn").addEventListener("click", () => {
+  document.getElementById("homeDiv").style.display = "none"
+  document.getElementById("gameDiv").style.display = "block"
+  getFlags();
+});
+
 var fwc = [{}];
 let random;
 let score = 0;
@@ -42,7 +48,7 @@ function getFlags() {
     });
 }
 
-getFlags();
+
 function handleClick(options, optionEl) {
   if (options == fwc[random].country) {
     if (correctAudio.paused) {
