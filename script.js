@@ -1,9 +1,18 @@
 document.getElementById("playBtn").addEventListener("click", () => {
-  document.getElementById("homeDiv").style.display = "none"
-  document.getElementById("gameDiv").style.display = "block"
+  document.getElementById("homeDiv").style.display = "none";
+  document.getElementById("gameDiv").style.display = "block";
   getFlags();
 });
 
+const check = document.getElementById("sound");
+check.addEventListener("change", () => {
+  if (check.checked) {
+    enableSound = true;
+  } else {
+    enableSound = false;
+  }
+});
+let enableSound = false;
 var fwc = [{}];
 let random;
 let score = 0;
@@ -48,13 +57,14 @@ function getFlags() {
     });
 }
 
-
 function handleClick(options, optionEl) {
   if (options == fwc[random].country) {
-    if (correctAudio.paused) {
-      correctAudio.play();
-    } else {
-      correctAudio.currentTime = 0;
+    if (enableSound) {
+      if (correctAudio.paused) {
+        correctAudio.play();
+      } else {
+        correctAudio.currentTime = 0;
+      }
     }
     optionEl.style.border = "4px solid green";
     score += 20;
@@ -64,10 +74,12 @@ function handleClick(options, optionEl) {
       getFlags();
     }, 1000);
   } else {
-    if (incorrectAudio.paused) {
-      incorrectAudio.play();
-    } else {
-      incorrectAudio.currentTime = 0;
+    if (enableSound) {
+      if (incorrectAudio.paused) {
+        incorrectAudio.play();
+      } else {
+        incorrectAudio.currentTime = 0;
+      }
     }
     optionEl.style.border = "4px solid red";
     optionEl.classList.add("animate-error");
