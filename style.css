@@ -29,10 +29,12 @@ body {
 .playBtn{
   font-family: PublicPixel ;
   padding: 1rem;
-  border: none;
+  border: 2px solid white;
+  background-color: black;
+  color: white;
   border-radius: .5rem;
   cursor: pointer;
-  box-shadow: 1rem .2rem 10rem white;
+  animation: glowshadow 3s infinite alternate;
 }
 #sound{
   width: 1rem;
@@ -93,4 +95,13 @@ body {
   transform: rotate(-4deg);
  }
 
+}
+
+@keyframes glowshadow {
+  from {
+    box-shadow: none;
+  }
+  to {
+    box-shadow: 0 0 1rem white, 0 0 5rem white;
+  }
 }
