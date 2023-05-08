@@ -57,14 +57,18 @@ function getFlags() {
     });
 }
 
+function playSound(audio){
+  if (audio.paused) {
+    audio.play();
+  } else {
+    audio.currentTime = 0;
+  }
+}
+
 function handleClick(options, optionEl) {
   if (options == fwc[random].country) {
     if (enableSound) {
-      if (correctAudio.paused) {
-        correctAudio.play();
-      } else {
-        correctAudio.currentTime = 0;
-      }
+      playSound(correctAudio)
     }
     optionEl.style.border = "4px solid green";
     score += 20;
@@ -75,11 +79,7 @@ function handleClick(options, optionEl) {
     }, 1000);
   } else {
     if (enableSound) {
-      if (incorrectAudio.paused) {
-        incorrectAudio.play();
-      } else {
-        incorrectAudio.currentTime = 0;
-      }
+      playSound(incorrectAudio)
     }
     optionEl.style.border = "4px solid red";
     optionEl.classList.add("animate-error");
