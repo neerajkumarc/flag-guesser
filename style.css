@@ -12,6 +12,7 @@ body {
 }
 #flag {
   width: 350px;
+  aspect-ratio: 3/2;
   box-shadow: 1px 1px 400px #6a6a6a;
 }
 
