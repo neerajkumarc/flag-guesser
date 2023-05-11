@@ -25,7 +25,7 @@ document.getElementById("highscore").textContent = highscore;
 function updatescore() {
   score < 0
     ? (score = 0)
-    : (document.getElementById("score").innerText = score);
+    : (document.getElementById("score").textContent = score);
 }
 
 function getFlags() {
