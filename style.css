@@ -41,6 +41,7 @@ body {
 #sound{
   width: 1rem;
   height: 1rem;
+  cursor: pointer;
 }
 .section1 {
   display: flex;
