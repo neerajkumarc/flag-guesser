@@ -10,6 +10,7 @@ body {
   line-height: 1.5rem;
   font-family: PublicPixel;
 }
+
 #flag {
   width: 350px;
   aspect-ratio: 3/2;
@@ -17,7 +18,7 @@ body {
   border-radius: .5rem;
 }
 
-.section{
+.section {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,11 +26,13 @@ body {
   gap: 1rem;
   height: 80vh;
 }
-.section h1{
+
+.section h1 {
   line-height: 3rem;
 }
-.playBtn{
-  font-family: PublicPixel ;
+
+.playBtn {
+  font-family: PublicPixel;
   padding: 1rem;
   border: 2px solid white;
   background-color: black;
@@ -38,17 +41,20 @@ body {
   cursor: pointer;
   animation: glowshadow 3s infinite alternate;
 }
-#sound{
+
+#sound {
   width: 1rem;
   height: 1rem;
   cursor: pointer;
 }
+
 .section1 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 1rem;
 }
+
 .main {
   display: flex;
   flex-direction: column;
@@ -60,6 +66,7 @@ body {
 .optionsDiv {
   height: 200px;
 }
+
 #options {
   display: grid;
   margin-top: 1rem;
@@ -78,25 +85,27 @@ body {
   box-shadow: 1px 1px 400px #6a6a6a;
   cursor: pointer;
 }
-.scoresdiv{
+
+.scoresdiv {
   display: flex;
-  gap:2rem;
+  gap: 2rem;
   font-size: .81rem;
   justify-content: center;
 }
 
-.animate-error{
-  animation: error .1s ease-in-out ;  
+.animate-error {
+  animation: error .1s ease-in-out;
 }
 
-@keyframes error{
+@keyframes error {
 
- 0%{
-  transform: rotate(4deg);
- }
- 100%{
-  transform: rotate(-4deg);
- }
+  0% {
+    transform: rotate(4deg);
+  }
+
+  100% {
+    transform: rotate(-4deg);
+  }
 
 }
 
@@ -104,6 +113,7 @@ body {
   from {
     box-shadow: none;
   }
+
   to {
     box-shadow: 0 0 1rem white, 0 0 5rem white;
   }
