@@ -14,7 +14,7 @@ body {
 #flag {
   width: 350px;
   aspect-ratio: 3/2;
-  box-shadow: 1px 1px 400px #6a6a6a;
+  /* box-shadow: 1px 1px 400px #6a6a6a; */
   border-radius: .5rem;
 }
 
@@ -82,7 +82,7 @@ body {
   margin: 0.4rem;
   font-family: PublicPixel;
   border-radius: 4px;
-  box-shadow: 1px 1px 400px #6a6a6a;
+  /* box-shadow: 1px 1px 400px #6a6a6a; */
   cursor: pointer;
 }
 
